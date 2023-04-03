@@ -18,7 +18,7 @@ People are free to contribute improvements to the metadata in the `meta-original
 
 There are multiple folders that each have their own use case.
 
-- `meta-originals`: Contains all the meta for the [original collection](https://opensea.io/collection/tinyfacesofficial).
+- `meta`: Contains all the meta for the [original collection](https://opensea.io/collection/tinyfacesofficial).
 - `meta-celebrities`: Contains all the meta for the [celebrities collection](https://opensea.io/collection/tinyfacesofficial-celebrities).
 - `renders`: Blender exported images from our [original collection](https://opensea.io/collection/tinyfacesofficial). Includes a transparent version as well. Is also used for our [wallpaper download](https://nft.tinyfac.es/yearbook) service.
 - `renders-celebrities`: Blender exported images from our [celebrities collection](https://opensea.io/collection/tinyfacesofficial-celebrities). Includes a transparent version as well.
@@ -29,21 +29,23 @@ There are multiple folders that each have their own use case.
 
 ## 📁 Update IPFS
 
-If changes happened to the `meta-originals` or `meta-celebrities` files we need to update this within the [contract](https://etherscan.io/address/0xb363af6181a4335608880510772a5f61a5183c88) with a new IPFS location.
+If changes happened to the `meta` or `meta-celebrities` files we need to update this within the [contract](https://etherscan.io/address/0xb363af6181a4335608880510772a5f61a5183c88) with a new IPFS location.
 
 This is currently only can be done by people who have access to the contract wallet.
 
 **🖼️ Update the art (optional):**
 
 1. Using Terminal`cd` in the root folder
-2. Run `python3 ./scripts/upload_renders.py`
+2. Run `python3 ./scripts/replace-hashes.py`
 3. Save the returned id to use in the next step
 
 **💿 Update the meta data:**
 
 1. Using Terminal`cd` in the root folder
-2. Run `python3 ./scripts/upload_meta.py`
+2. Run `python3 ./scripts/upload-renders.py`
 3. Save the returned id to save `ipfs://id/` to the contract
+
+Use `replace-celebrities-hashes.py` and `upload--celebrities-renders.py` for the celebrities collection.
 
 ## 🤯 Upload bulk files
 
