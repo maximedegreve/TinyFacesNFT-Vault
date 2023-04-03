@@ -3,8 +3,8 @@ import os
 from os.path import dirname, abspath
 
 d = dirname(abspath(__file__))
-meta_temp = d + "/tiny_celebrities_meta_temp"
-meta_final = d + "/tiny_celebrities_meta"
+meta_temp = d + "/tiny_meta"
+meta_final = d + "/temp/meta"
 
 hash = input("🙋🏻‍♂️ Enter the hash of the IPFS celebrities images folder: ")
 
