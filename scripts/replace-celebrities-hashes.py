@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 import os
-from os.path import dirname, abspath
 
-d = dirname(abspath(__file__))
-meta_final = d + "/meta-celebrities"
-meta_temp = d + "/temp"
+parent = os.path.abspath(__file__ + "/../../")
+meta_final = parent + "/meta-celebrities"
+meta_temp = parent + "/meta-celebrities-temp"
 
 hash = input("🙋🏻‍♂️ Enter the hash of the IPFS celebrities images: ")
+
+if not os.path.exists(meta_temp):
+    os.makedirs(meta_temp)
 
 for filename in os.listdir(meta_final):
     if filename.endswith(".json"):
